@@ -1,0 +1,253 @@
+Course Outline for Intermediate: 11.5 Months
+Core Outline-----------
+
+>Intermediate Problem Solving | Duration: 1 Month
+
+>Data Structures and Algorithms | Duration: 4 Months
+
+>Advanced DSA* | Duration: 1 Month
+
+>SQL | Duration: 1 Month
+
+Low Level Design**-----------
+
+>Fullstack | Duration: 3 Months
+  or
+  Backend | Duration: 3 Months
+  or
+  Data Engineering | Duration: 2 Months
+
+>High Level Design | Duration: 1.5 Months
+
+Project**-------------
+>Fullstack | Duration: 1 Month
+  or
+  Backend | Duration: 1 Month
+
+Electives***(Optional)--------------------
+
+>Product Management for Engineers | Duration: 1 month
+and/or
+>Data Engineering | Duration: 2 months
+and/or
+>Gen AI for Software Engineers | Duration: 2 months
+
+* This module is customised at learner level i.e. a learner can opt for this module at
+any point during the course post the completion of Data Structures & Algorithms module,
+once they have demonstrated their command on the concepts of Data Structures & Algorithms
+ module.
+
+** Only 1 Specialisation is allowed per learner.
+Recorded lectures for the other can be availed via Student Dashboard.
+At Least 1 Specialisation is mandatory for successful completion of the course.
+
+*** A learner can do as many electives as they want,
+but only after completion of Core Curriculum.
+
+---------------------------------------------------------------------------------------
+Curriculum Deep Dive for Intermediate (11.5 Months)
+
+Program Timeline------------
+
+Introduction to Problem Solving (Starting point for Intermediate Batch) - 1 Month
+
+>Introduction to Problem Solving
+>Introduction to Time and Space Complexity
+>Introduction to Arrays
+>Array Techniques
+>Memory Management
+>Sorting Basics
+>Bit Manipulation Basics
+>Problems on Strings
+>Data Structures and Algorithms
+
+(Starting Point for Advance Batch) - 4 Months
+
+>Problems on Arrays
+>Bit Manipulation
+>Recursion
+>Backtracking
+>Maths for Problem Solving
+>OOPS Basics
+>Sorting
+>Hashing
+>Searching (Binary Search)
+>Two Pointers
+>Linked Lists
+>Stacks
+>Queues
+>Binary Tree
+>BST
+>Heaps
+>Greedy
+>Dynamic Programming
+>Graphs
+
+Advance DSA - 1 month
+This module is customized at learner level i.e.
+a learner can opt for this module at any point during the course post the completion
+of Data Structures & Algorithms module, once they have demonstrated their command on
+the concepts of Data Structures & Algorithms module.
+
+>Advanced Maths Problems
+>Advanced Backtracking Problems
+>Tries
+>Strings Pattern Matching
+>Advanced Dynamic Programming Problems
+>Advanced Graph Concepts
+
+SQL - 1 Month
+
+>Relational Model
+>CRUD
+>Joins
+>Aggregation
+>Subqueries
+>Views
+>Transactions
+>Indexing
+
+Low Level Design - 3 Months
+
+Only 1 Specialisation is allowed per learner. Recorded lectures for the other
+can be availed via Student Dashboard. At Least 1 Specialisation is mandatory for
+successful completion of the course.
+
+Option 1 Backend
+>OOP
+>Multithreading
+>Adv Lang Concepts and Popular Interview Questions
+>SOLID
+>Design Patterns
+>UML Diagrams
+>Schema Design
+>How Internet Works (TCP, UDP, HTTP, Layering Architecture)
+>API Design
+>MVC
+>Backend LLD and Machine Coding Case Studies
+
+Option 2 Fullstack
+>HTML, CSS, Javascript
+>Advanced HTML, CSS Case Studies
+>JS for Web Dev (DOM Manipulation, Event Handling)
+>Advanced JS Concepts (OOP and Concurrency) and Popular Interview Questions
+>Frontend Design Patterns
+>How Internet Works (TCP, UDP, HTTP, Layering Architecture)
+>API Design
+>Frontend LLD and Machine Coding Case Studies
+>Backend Design
+
+High Level Design - 1.5 Months
+>Consistent Hashing
+>Caching
+>CAP Theorem
+>Distributed Systems & Databases
+>SQL and NoSQL
+>Scalability
+>Zookeeper + Kafka
+>Location Based Services (S3, Quad Trees)
+>Microservices
+>Case Studies
+
+Project - 1 Month
+Only 1 Specialization is allowed per learner. Recorded lectures for the other can be
+availed via Student Dashboard. At Least 1 Specialization is mandatory for successful
+completion of the course.
+
+Option 1 Backend
+>Unit Testing
+>ORM
+>Deployment
+>Git
+>Spring Boot
+>Project Interview Questions (Spring/Hibernate)
+>Capstone Projects
+
+Option 2 Fullstack
+>Git
+>React
+>Redux
+>Deployment
+>Testing
+>MongoDB
+>NodeJS
+>ExpressJS
+>Capstone Projects
+
+
+Electives (Optional)---------------
+
+A learner can do as many electives as they want, but only after completion of Core
+Curriculum.
+
+and/or Product Management for Engineers - 1 Month
+>Introduction to Product Management
+>Product Thinking & Product Discovery
+>Product Roadmap & Prioritization
+>Mental Models for Product Managers
+>Product Analytics
+>Mixpanel
+>Hands on Case Studies
+>Delivery & Project Management
+>Practical ways to apply PM lessons as an Engineer
+
+and/or Data Engineering - 2 Months
+>Building efficient Data Processing Systems
+>Advanced SQL
+>Cloud Services - AWS, or GCP
+>Developing ETL pipelines
+>Map-Reduce Framework
+>Big Data
+>Data Warehousing & Modelling
+>OLAP, Dashboarding
+>Workflow Orchestration
+>Logging, and Monitoring
+>MapReduce, HiveQL, Presto
+>Projects
+
+and/or Gen AI for Software Engineers - 2 Months
+>Introduction to AI and ML
+>Introduction to Deep Learning
+>GenAI, LLMs
+>Transformer Architecture
+>Embeddings and RAG
+>LLM Evaluations
+>AI Agents
+>Building Production-Ready AI Applications
+
+---------------------------------------------------------------------------------------
+Refresher:
+
+Refresher
+Revising and learning JAVA
+
+Intermediate
+Basic DSA
+
+Advance
+Implementation of DSA
+
+
+Language
+
+Projects:
+Backend or FullStack
+
+LLD & HLD, SQL etc
+
+
+--------------------------------------------------------
+
+Refresher Classes:
+1: Intro
+2: If else
+3: While
+4: For
+5: Patterns
+6: Functions
+7: 1D Arrays
+8: 2D Arrays
+9: ArrayList
+10: Strings
+11: HashMap & HashSet
+--------------------------------------------------------

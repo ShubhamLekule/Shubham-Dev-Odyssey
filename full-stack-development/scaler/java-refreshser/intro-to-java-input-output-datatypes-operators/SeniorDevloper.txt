@@ -1,0 +1,59 @@
+INTERVIEW:
+
+DSA ->
+  Easy to Medium
+  (Optional) Medium to Hard
+  Includes Dynamic Programming, Graph
+
+Tech Round ->
+a. Backend
+  Concurrency
+  SQL
+  Java Streams/ Collections
+b. Frontend/Full-stack
+  In depth JS and CSS
+  Library/Framework like React/Angular
+  Java/NodeJS deep dive
+
+Design ->
+a. Backend
+  Deep discussion on previous tech stack used / MVC
+  Design Patterns
+  Schema / API Design
+  HLD case studies (design Uber, Instagram, Phone pay, Amazon etc.)
+  Microservices
+  Machine coding
+b. Frontend/Full-stack
+  Questions on previous work (High quality proof of quality important)
+  Architectural Design (HLD)
+  Scenario based design questions (Calender / GDoc / Infinite scroll Bing)
+  API and Scheme Design web architecture
+  Machine coding rounds
+
+Behavioral ->
+
+--------------------------------------------------------------------------------
+
+WORK:
+
+- Everything addressed in interview
+
+- Comfort with learning new tech stack from document
+- Understanding large codebase
+
+a. Backend
+- Troubleshooting product issues
+- Observability
+- Leading teams and guiding junior engineers
+- Exposure / Familiarity with scale
+- Familiarity with cloud
+- CI/CD Familiarity
+- Basic product sense and focus on impact
+b. Frontend/Full-stack
+- Site Performance
+- Maintainability and expendability of code
+- Mentoring junior folks in the teams
+- Building right libraries, frameworks within the company to ensure consistent,
+  high quality frontend.
+
+- Soft skills (Communication, prioritization, Design, team work)
