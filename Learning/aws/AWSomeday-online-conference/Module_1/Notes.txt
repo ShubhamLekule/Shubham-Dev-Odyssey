@@ -1,0 +1,69 @@
+Module 1
+
+Technical Trainer at AWS : Pete Vandaele
+
+Modules:
+Compute
+Storage
+DB
+networking
+Security
+
+Innovation with AWS
+
+
+what is cloud:
+-using someone else computer
+-Accessing resources over the cloud service provider
+-you don't need to manage infrastructure
+-with cloud computing you can stop thinking of your infrastructure as hardware AND
+instead think of it as software
+-deploy your application globally
+
+
+Six Advantages of cloud computing
+-Stop guessing capacity
+-increase speed and agility
+-Trade upfront expense for variable expense
+-benefit from massive economies of scale
+-go global in minutes
+-stop spending money on running and maintaining data centers
+
+
+
+Region: It is collection of AZ , minimum 3 availability zone
+this AZ connected with aws network with high availability , low latency , AZ are 100KM away
+from each other
+
+
+Choosing Region:
+-Data Residency regulatory compliance
+  Are there relevant Region data Privacy
+Proximity of data
+
+Cost effectiveness
+
+
+Content Delivery Network(CDN)Amazon CloudFront
+
+
+cloud deployment models:
+On premises
+Hybrid
+Cloud
+
+
+benefit of cloud computing is
+elasticity
+Auto Scaling
+Public Cloud
+Private Cloud
+Hybrid cloud(companies' Data on both cloud and on prime)
+
+
+IAAS
+PAAS
+SAAS
+Serverless/ Serverless  computing 
+Big data
+Generative AI

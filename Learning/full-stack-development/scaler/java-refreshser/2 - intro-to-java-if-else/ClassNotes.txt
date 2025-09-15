@@ -1,0 +1,67 @@
+Day 5:
+if(Condition: Result-> True/False){
+True part executed
+}else{
+False Part executed
+}
+
+
+Standard practice is use double by default
+
+Operators
+Division(/)
+int/int = int
+
+float/int = float : always higher priority datatype get picked
+int/float = float : always higher priority datatype get picked
+
+float/float=float
+
+long/int=long
+
+double/float=double
+
+Multiplication(*)
+
+int * int = int
+float * int = float
+int * float = float
+long * int = long
+double * float = double
+byte->short->int->long->float-double
+
+int x=100000;
+int y=100000;
+long z=(long)(x*y);
+  //x(int)*y(int)=int (value of int*int is long which consider as int as per precision)
+  //so leads to garbage value
+  (long)(x*y) // garbage value stored in long
+  long z=(long)x*y; // this long garbage value assign to z
+
+
+  int x=100000;
+  int y=100000;
+  long z=(long)x*y;
+  here x 1st type casted to long that means long * int which result is long as per precision
+	then this long result stored in long variable z that's why here no garbage value
+
+  There is IEEE784 format which decide how decimal values stored
+
+  Modulo(%):
+  its result to reminder
+
+  7%3=1
+  8%5=3
+  10%2=0
+  5%12=5
+
+  Relational Operators:
+  >,<,==,<=,>=,!,!=
+  result is in True or False (boolean)
+
+  Logical Operator:
+  AND && -> T && T= T, T && F= F,F && T= F,F && F= F
+            (Everything is True then result is True otherwise False)
+  OR || -> T && T= T, T && F= T,F && T= T,F && F= F
+            (anyone is True then result is True otherwise False)
+  NOT ! -> !T=F, !F=T

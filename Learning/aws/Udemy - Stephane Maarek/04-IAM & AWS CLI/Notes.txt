@@ -1,0 +1,63 @@
+IAM
+-Identity and Access Management
+-It is a global service
+-Root Account created by default , shouldn't be used or shared
+-Users are people within your organization, and can be grouped (Root account can't be
+  shared instead create user in IAM and shared that)
+- One user represent one person within your organization.
+- Users can be grouped
+-Groups only contain users not other groups
+-User don't have to belong to a group, and user can belong to multiple groups
+
+Example :
+Suppose below people in an organization
+
+SHUBHAM FULL-STACK DEVELOPER
+PIKACHU FULL-STACK DEVELOPER
+ALICE BACKEND DEVELOPER
+BOB BACKEND DEVELOPER
+CHARLES BACKEND DEVELOPER
+DAVID FRONTEND DEVELOPER
+EDWARD FRONTEND DEVELOPER
+FRED OPERATIONS
+
+BELOW ARE THE GROUPS CAN BE FORMED WHERE SHUBHAM AND PIKACHU ARE PART OF MULTIPLE GROUPS AND
+FRED IS NOT PART OF ANY GROUPS:
+
+BACKEND DEVELOPERS {SHUBHAM, PIKACHU, ALICE, BOB, CHARLES}
+FRONTEND DEVELOPERS {SHUBHAM, PIKACHU, DAVID, EDWARD}
+FULL-STACK DEVELOPER {SHUBHAM, PIKACHU}
+{FRED}
+
+
+IAM: Permissions
+-USERS or GROUPS can be assigned JSON documents called policies
+e.g,
+{
+"Version": "2012-10-17",
+"Statement": [
+{
+  "Effect": "Allow",
+  "Action": "ec2:Describe*",
+  "Resource": "*"
+},
+{
+  "Effect": "Allow",
+  "Action": "elasticloadbalancing:Describe*",
+  "Resource": "*"
+},
+{
+  "Effect": "Allow",
+  "Action": [
+    "cloudwatch:ListMetrics",
+    "cloudwatch:GetMetricStatistics",
+    "cloudwatch:Describe*"
+  ],
+  "Resource": "*"
+}
+]
+}
+
+- These policies define the permissions of the users
+- In AWS you apply least privilege principal: don't give more permissions than a user needs
+  

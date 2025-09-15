@@ -1,0 +1,49 @@
+AWS Certified Developer Exam : DVA-C02
+30 AWS Services
+
+
+AWS (Amazon Web Services):
+It is a cloud provider
+They provide you with server and services that you can use on demand and scale easily
+
+AWS Services:
+Amazon EC2
+Amazon ECR
+Amazon ECS
+AWS Elastic Beanstalk
+AWS Lambda
+Elastic Load Balancing
+Amazon CloudFront
+Amazon Kinesis
+Amazon Route 53
+Amazon S3
+Amazon RDS
+Amazon Aurora
+Amazon DynamoDB
+Amazon ElasticCache
+Amazon SQS
+Amazon SNS
+AWS Steps Functions
+Auto Scaling
+Amazon API Gateway
+Amazon SES
+Amazon Cognito
+IAM
+Amazon CloudWatch
+Amazon EC2 System Manager
+AWS CloudFormation
+AWS CloudTrail
+AWS CodeCommit
+AWS CodeBuild
+AWS CodeDeploy
+AWS CodePipeline
+AWS X-Ray
+AWS KMS
+
+
+
+https://www.stephanemaarek.com/
+
+https://courses.datacumulus.com/downloads/certified-developer-k92
+
+Try using a VPN service such as TunnelBear (https://www.tunnelbear.com/, it's free!)
