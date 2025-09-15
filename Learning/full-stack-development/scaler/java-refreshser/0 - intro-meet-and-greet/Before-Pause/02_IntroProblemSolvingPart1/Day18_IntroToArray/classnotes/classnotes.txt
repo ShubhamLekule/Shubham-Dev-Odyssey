@@ -1,0 +1,359 @@
+polynominal-> O(n^2)
+              O(n^3)
+Exponential-> O(2^n), O(b^n), O(n!)
+
+Linear -> O(n)
+
+quadratic
+
+qubic
+
+
+Space Complexity: maximum space (worst case) that is utilize
+at any point during running the algorithm.
+
+We calculate this also in BigO
+
+input(Given By user) and output(returning) of fun space in not calculated.
+
+
+fun(int N){ //4byte
+int x; //4byte
+int y; //4byte
+long z; //8byte
+return x+y+z; //8byte
+}
+
+Ignoring input N and output x+y+z then total space required for this piece of code
+is 16 byte which is constant value so space complexity is O(1)
+
+
+Q. calculate space Complexity
+
+Step                code
+1       fun(int N){ //4 byte
+2         int arr[10]; //40 byte
+3         int x;  //4 byte
+4         int y;  // 4 byte
+5         long z; // 8 byte
+6         int[] arr2=new int[N]; //4*N bytes
+7       }
+
+ignore input fun's 4 byte, 40+4+4+8+4N =56+4N= 56 ignore and 4 constant ignore: O(N)
+
+
+Q. calculate space Complexity
+
+Step                code
+1       fun(int N){ //4 byte
+2         int x=N; //4 byte
+3         int y=x*x;  //4 byte
+4         long z=x+y;  // 8 byte
+5         int[] arr=new int[n]; //4*N byte
+6         long[][] arr2=new int[N][N]; //8*N*N bytes
+7       }
+
+O(n^2)
+
+
+Q. calculate space Complexity
+
+Step                code
+1       int maxArr(int arr[],int N){ //ignore
+2         int ans=arr[0]; //4 byte, but we are not counting as we are returning
+3        for(i from 1 to N-1){  //4 byte for int i, i's value keep updating so space const
+4         ans=max(ans,arr[i]);  // same 4 byte still in use for ans varaible
+5         }
+6         return ans; // ignore
+7       }
+
+4 byte : O(1)
+
+Q. calculate space Complexity
+
+Step                code
+1       int maxArr(int arr[],int N){ //ignore
+2         int ans=arr[0]; //4 byte, but we are not counting as we are returning
+3        for(i from 1 to N-1){  //4 byte for int i, i's value keep updating so space const
+4          int x=5;// 4 byte,each time when loop work x created at the end x space released
+5         ans=max(ans,arr[i]);}// same 4 byte still in use for ans varaible
+6         return ans; // ignore
+7       }
+int i 4 byte + int x 4byte =8 byte : O(1)
+
+
+Arrays:
+
+int arr[N];
+
+arr[0], arr[1],arr[2] ...... arr[n-1]
+
+
+print all elements of Arrays
+
+void print(int arr[],n){
+for(int i=0;i<n;i++){
+print (arr[i])
+}
+}
+
+Time Complexity O(n)
+Space Complexity O(1)
+
+swap
+x=10, y=20
+x=x+y //30
+y=x-y //30-20 =10
+x=x-y //30-10 =20
+
+Brute force solution means easiest or naivest solution
+
+
+Dynamic Array(ArrayList):
+
+in normal array size is fixed
+in Dynamic array size is keeps increasing
+
+ArrayList behind the scene use array only
+
+if you want to find some element in Dynamic array lookup is very fast as its uses indexing
+so for lookup in dynamic array is O(1) Time Complexity
+
+when we create dynamic array i.e. ArrayList 1st time behind the scene its create
+array of size 10.
+
+when initial 10 elements is filled and we try to insert 11th element that time dynamic
+array create new array of double size i.e. 20 and copy older array into new Array
+
+till the time we adding 10 element the time Complexity is O(1)
+
+for 11th element the insertion time complexity is O(n) as its create new array and
+copy older element into new. from 12 onwards again its O(1) till dynamic array filled
+
+ Index:                  0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20
+ Element:                1 2 4 6 5 4 1 2 4 6 5  4   1  2  4  6  5  4  8  0  9
+ Time Complexity Big O:  1 1 1 1 1 1 1 1 1 n 1  1   1  1  1  1  1  1  1  n  1
+
+ amortized O(1): some operations are cheap and some are expensive that time we calculate
+                average of timecomplexity that called amortized time Complexity.
+
+What is amortized time complexity?
+Amortized time complexity is a concept in algorithm analysis used to describe
+the average time per operation over a sequence of operations,
+in cases where occasional operations might be much more expensive than the others.
+The idea is that while some operations can take a long time,
+the average time over a long sequence of operations remains efficient.
+
+Key Points of Amortized Analysis:
+Sequence of Operations: It considers the cost of a sequence of operations rather than
+                        a single operation.
+Averaging: It averages the time taken over all the operations,
+          smoothing out the occasional high costs by distributing them
+          across many operations.
+
+Types of Amortized Analysis:
+
+Aggregate Analysis: Determines the total cost of a sequence of operations and
+                    then averages it over all operations.
+
+Accounting Method: Assigns different costs (credits) to different operations,
+                    balancing the more expensive ones with the less expensive ones.
+
+Potential Method: Uses a potential function to represent the "stored energy" that
+                  can pay for future operations.
+Example: Dynamic Array (ArrayList)
+A classic example of amortized analysis is the dynamic array
+(such as ArrayList in Java).
+
+Doubling Strategy: When an ArrayList exceeds its current capacity,
+it doubles its size. While the resize operation is expensive,
+it doesn't happen frequently.
+Analysis of Dynamic Array:
+
+Insert Operation:
+Most inserts (add operations) take constant time,
+𝑂(1)
+
+Occasionally, an insert will require resizing the array, which takes
+𝑂(𝑛) time, where
+n is the number of elements.
+
+Amortized Cost Calculation:
+Suppose you have an array that doubles in size when full. The cost of inserting
+n elements can be broken down as follows:
+Initial array of size 1: Resizing happens after 1 element, copy 1 element.
+Array of size 2: Resizing happens after 2 more elements, copy 2 elements.
+Array of size 4: Resizing happens after 4 more elements, copy 4 elements.
+And so on.
+The total cost for inserting
+n elements is approximately:
+1+2+4+8+…+n
+This is a geometric series, and the sum is
+2n−1, which is
+O(n).
+
+Amortized Cost:
+
+The total cost of
+O(n) for n operations means that the amortized cost per operation is O(1).
+Conclusion:
+The amortized time complexity provides a more accurate measure of an algorithm's
+efficiency over a sequence of operations, especially when individual operations
+can occasionally be costly but are balanced by many cheaper operations.
+
+In summary, amortized analysis helps us understand that even though some operations
+might be costly occasionally, the average cost per operation remains low
+when considering a long sequence of operations.
+This is particularly useful for data structures like dynamic arrays, hash tables,
+and splay trees.
+
+
+Next Class Prefix sum
+----------------------------------------------------------------
+Constant Time Complexity
+O(1): The time complexity is constant and does not depend on the size of the input.
+Examples: Accessing an element in an array, pushing and popping in a stack.
+
+Linear Time Complexity
+O(n): The time complexity grows linearly with the input size.
+Examples: Linear search, iterating through an array.
+
+Quadratic Time Complexity
+O(n^2): The time complexity grows quadratically with the input size.
+Examples: Bubble sort, insertion sort, selection sort, nested loops iterating over
+the same collection.
+
+Cubic Time Complexity
+O(n^3): The time complexity grows cubically with the input size.
+Examples: Triple nested loops, certain matrix multiplication algorithms.
+
+Polynomial Time Complexity
+O(n^k): The time complexity grows polynomially with the input size, where
+k is a constant.
+Examples: Higher-degree polynomial algorithms, like O(n^4).
+
+Exponential Time Complexity
+O(2^n): The time complexity grows exponentially with the input size.
+Examples: Recursive algorithms solving the Tower of Hanoi, brute-force algorithms
+for the traveling salesman problem.
+
+Logarithmic Time Complexity
+O(log n): The time complexity grows logarithmically with the input size.
+Examples: Binary search, operations in balanced binary search trees (like AVL trees, Red-Black trees).
+
+Linearithmic Time Complexity
+O(n log n): The time complexity grows linearly with the input size times the logarithm
+of the input size.
+Examples: Merge sort, heap sort, quicksort (average case).
+
+Factorial Time Complexity
+O(n!): The time complexity grows factorially with the input size.
+Examples: Brute-force solutions to the traveling salesman problem,
+generating all permutations of a set.
+
+Examples Recap:
+Constant (O(1)): Array access
+Linear (O(n)): Linear search
+Quadratic (O(n^2)): Bubble sort
+Cubic (O(n^3)): Triple nested loops
+Polynomial (O(n^k)): Certain complex algorithms
+Exponential (O(2^n)): Tower of Hanoi
+Logarithmic (O(log n)): Binary search
+Linearithmic (O(n log n)): Merge sort
+Factorial (O(n!)): Generating permutations
+
+
+find time complexity:
+for(i=0;i<2^n;i++){
+  int j=i;
+  while(j>0){
+  j--;
+  }
+}
+
+
+i         j           iteration
+0         [-]         0
+1         [1,1]       1
+2         [1,2]       2
+3         [1,3]       3
+.
+.
+.
+2^n-1     [1,2^n-1]   2^n-1
+----------------------------
+
+1+2+3+....+2^n-1
+Arithmetic Progression=(n*(2a+(n-1)d))/2
+n=2^n-1, a=1, d=1
+(n*(2a+(n-1)d))/2=((2^n-1)*(2*1+(2^n-1-1)*1))/2
+                 =((2^n-1)*(2+(2^n-2)))/2
+                 =((2^n-1)2^n)/2
+                 =(2^n*2^n-2^n)/2
+                 =2^2n/2-2^n/2
+                 =neglect lower term i.e. 2^n/2: 2^2n/2
+                 =neglect constant i.e. /2: 2^2n
+                 =O(2^2n) or O(4^n)
+
+
+find time complexity:
+for(i=1;i<=n;i++){
+  for(j=1;j<=n;j=j+1){
+  .....
+  }
+}
+
+
+i         j           iteration
+1         [1,n]       n
+2         [1,n]       n/2
+3         [1,n]       n/3
+.
+.
+.
+2^n-1     [1,n]      1
+----------------------------
+
+n+n/2+n/3+....+1
+n (1+1/2+1/3+...)+1
+n log(n)+1
+neglect constant i.e. 1
+n log(n)
+=O(nlog(n))
+
+
+find time complexity:
+n is integer input from user
+i=1; s=1;
+while(s<n){
+s=s+i;
+i++;
+}
+In the first iteration, s becomes 1 + 1 = 2 and i becomes 2.
+In the second iteration, s becomes 2 + 2 = 4 and i becomes 3.
+In the third iteration, s becomes 4 + 3 = 7 and i becomes 4.
+And so on...
+
+sum=(k(k+1))/2=n
+  = K^2+k=2n
+  =neglect k
+  =k^2=2n
+  =k=root(2n)
+  =neglect const
+  =root(n)
+
+  understand way:
+
+  2, 4, 7 , 11 ........kth term
+  (1+1) (1+1+2) (1+1+2+3) (1+1+2+3+4).....(1+(1+2+3+...+k))
+
+  (1+(1+2+3+...+k))>=n
+  1+(k(K+1))/2>=n
+  1+(k^2+k)/2>=n
+  neglect lower term i.e 1 & k
+  k^2/2>=n
+  neglect constant i.e. /2
+  K^2>=n
+  k>=root(n)
+
+  O(root(n))

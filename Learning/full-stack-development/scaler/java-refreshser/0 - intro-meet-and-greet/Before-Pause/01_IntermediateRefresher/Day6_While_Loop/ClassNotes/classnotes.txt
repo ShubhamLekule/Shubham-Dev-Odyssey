@@ -1,0 +1,12 @@
+While Loop:
+initialization
+while(condition){
+iterative part //work
+increment or decrement part
+}
+
+x=10
+x+=1  : x=x+1
+
+
+in computer science iterations are expensive

@@ -1,0 +1,75 @@
+Q.What will be the total number of iterations in the following code?
+
+for (int i = 0; i < n; i++) {
+
+    for (int j = 0; j <= i; j++) {
+
+        print(i + j);
+    }
+}
+
+n^2
+n
+n*(n+1) / 2 correct ans
+n*(n-1) / 2
+
+
+--------------------------------
+Here I'm describing with easy reasoning without any fancy mathematics:
+
+When i = 0:
+    - The outer loop is running 1 time
+    - The inner loop is running 1 time
+    - Total 2 iterations
+
+When i = 1:
+    - The outer loop is running 1 time
+    - The inner loop is running 2 times
+    - Total 3 iterations
+
+When i = 2:
+    - The outer loop is running 1 time
+    - The inner loop is running 3 times
+    - Total 4 iterations
+
+[Skipping the other numbers]
+
+When i = n-1:
+    - The outer loop is running 1 time
+    - The inner loop is running n times
+    - Total n+1 iterations
+
+Remember when i=n-1, total iteration = n+1
+
+When i = n:
+    - The outer loop is running 0 time
+    - The inner loop is running 0 time (As it never execute the inner loop when i=n)
+    - Total 0 iterations
+
+So,  we need to sum all the number of iteration:
+      No of iteration = (No iteration when i = n, which is always 0)
+       + (Sum of other total iterations when i<n: From i=0 to i=n-1, ie. 2+3+4+...+(n+1))  ---- As total iteration of i=n-1 is n+1
+
+=> No of iteration = 0 + (2+3+4+...+n+1)
+=> No of iteration = 0 + (1+2+3+4+...+n)
+=> No of iteration = (1+2+3+4+...+n)
+
+
+Now we can clearly observe the pattern.
+The number of iteration will be the total sum of positive integers from 1 to n.
+Now we know the famous formula, Sum = n*(n+1)/2
+
+So, No of iteration for this algorithm = n*(n+1)/2
+
+
+-----------------------------------------
+Hint 1:
+for i = 0, loop j runs 1 time.
+for i = 1, loop j runs 2 times.
+Similarly, for i = n-1, loop j runs n times.
+
+Finding a formula for the same 1 + 2 + … n will give us the answer.
+------------------------------------------
+Complete solution:
+The total number of times print statement executes will be:
+1 + 2 + 3 + …. n = n*(n+1)/2.

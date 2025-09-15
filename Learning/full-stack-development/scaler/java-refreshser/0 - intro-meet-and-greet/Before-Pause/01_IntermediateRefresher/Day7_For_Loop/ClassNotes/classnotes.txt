@@ -1,0 +1,73 @@
+For Loops:
+
+for(initialize:condition:increment/decrement){ //Non of this 3 part compulsory
+//work
+}
+
+there is no diff in while and for loop
+
+Approaches:
+1)
+for(int i=1;i<=N;i++) {
+			System.out.print(i+" ");
+		}
+2)
+int i=1
+for(;i<=N;i++) {
+			System.out.print(i+" ");
+		}
+3)
+for(int i=1;i<=N;) {
+			System.out.print(i+" ");
+      i++
+		}
+4)
+int i=1
+for(;i<=N;) {
+			System.out.print(i+" ");
+      i++
+		}
+
+
+
+    for(int i=1;i<=N;i++(Any kind of updation code we can write here)) {
+    			System.out.print(i+" ");
+    		}
+
+  break : terminate the iteration
+  continue: skip current iteration move to next iteration
+
+
+  Scope of variable:
+  useful lifetime of a variable
+  code block {}
+
+  int x=10;
+  int y=15
+  {
+  y=10;//here updation
+  }
+
+  int x=10;
+  int y=15
+  {
+  int y=10;//here reinitialization throws error
+  }
+
+Unary operators:
+pre increment :
+i=1;
+++i // 1st updating then use
+
+i++ // 1st use then updating
+
+compound assignment:
+x+=2:x=x+2;
+x-=2:x=x-2;
+x/=2:x=x/2;
+x*=2:x=x*2;
+x%=2:x=x%2;
+
+
+java is compiled + interpreted language, 1st its compiled into bytecode
+then its interpreted line by line 

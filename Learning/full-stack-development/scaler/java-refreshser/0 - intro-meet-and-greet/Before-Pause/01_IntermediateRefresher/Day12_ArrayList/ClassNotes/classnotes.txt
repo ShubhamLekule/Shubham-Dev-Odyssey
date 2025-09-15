@@ -1,0 +1,49 @@
+ArrayList
+
+
+Drawbacks of Array:
+fixed size
+Size should be known
+
+ArrayList
+Similar like Array only diff is apart from syntax
+is Dynamic in nature(no need to specify the size)
+
+Syntax:
+ArrayList<Type> list=new ArrayList<>();
+
+Type is class here
+
+//Prmitive datatype= int, long, double float boolean
+//Wrapper class-> Integer, Long, Double,Float,Boolean
+
+While creating ArrayList can't use primitive datatype need to use Wrapper class
+
+ArrayList can be print directly:
+ArrayList<Integer> list=new ArrayList<Integer>();
+		System.out.println(list);
+    op:[]
+
+Add element: list.add(4);
+
+get element
+list.get(index number)=list.get(0)
+
+
+list.get(-1) // it will throw arrayindexoutofbound exception. as ArrayList uses Array
+behind the scene
+
+
+remove element:
+list.remove(index number):list.remove(1)
+
+update/set element
+list.set(1,8):list.set(index number, number to be set)
+
+
+
+2D ArrayList:
+ArrayList of ArrayList
+
+ArrayList<Integer> list=new ArrayList<Integer>();1d array
+ArrayList<ArrayList<Integer>> list2d=new ArrayList<ArrayList<Integer>>();

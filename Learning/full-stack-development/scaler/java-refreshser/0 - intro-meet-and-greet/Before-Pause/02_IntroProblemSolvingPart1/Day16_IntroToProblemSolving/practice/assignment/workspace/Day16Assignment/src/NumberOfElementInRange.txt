@@ -1,0 +1,9 @@
+Q.How many elements are there between [135, 246] (inclusive of them) ?
+
+111
+112 coorect ans
+113
+114
+
+246-135+1=112
+[a,b] =b-a+1

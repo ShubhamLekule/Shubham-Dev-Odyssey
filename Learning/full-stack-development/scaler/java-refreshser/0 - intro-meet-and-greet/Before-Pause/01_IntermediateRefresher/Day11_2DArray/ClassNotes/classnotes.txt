@@ -1,0 +1,27 @@
+2D Array:
+
+Collection of similar data items
+
+syntax
+
+int[][] arr=new int[row][col];
+row starts from 0 and col start from 0
+
+
+Q)If u hv mat of size m*n what is the index of bootom right corner?
+mat[m-1][n-1]
+
+Q)If u hv mat of size m*n what is the index of top left corner?
+mat[0][0]
+
+Q) How to create matrix of 5 col 7row?
+int[][] mat=new int[7][5]
+
+Q)If you have matrix of size N*M, what is the index of top right corner?
+mat[0][m-1]
+
+
+direct initialization of 2d Array
+int[][] arr={{1,2,3},{4,5,6},{7,8,9}};
+arr.length : to calculate no. of row
+arr[0].length : to calculate no. of column

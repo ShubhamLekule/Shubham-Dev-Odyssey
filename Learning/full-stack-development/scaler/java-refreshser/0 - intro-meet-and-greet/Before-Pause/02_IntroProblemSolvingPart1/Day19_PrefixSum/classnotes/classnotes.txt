@@ -1,0 +1,233 @@
+
+Prefix Sum
+
+
+
+
+Prefix sum is the technique where you precompute & store the cumulative sum of the sequence of elements that allows fast sum calculation of any continuous range.
+
+
+
+Let's say we have a sequence of elements A as mentioned below-
+
+A = {a0, a1, a2, a3, a4, a5}
+
+
+
+so Prefix Sum P will be calculated as
+
+P=  {p0, p1, p2, p3, p4, p5}
+
+
+
+where-
+
+p0 = a0
+
+p1 = a1 + a0
+
+p2 = a0 + a1 + a2
+
+p3 = a0 + a1 + a2 + a3
+
+p4 = a0 + a1 + a2 + a3 + a4
+
+p5 = a0 + a1 + a2 + a3 + a4 + a5
+
+
+
+Q) Say we need to sum get sum of all elements from indices
+ [2 to 5] => [a2 + a3 + a4 + a5]  or [p5 - p1]
+
+ [1 to 4] => [a1 + a2 + a3 + a4]      or [p4 - p0]
+ [0 to 4] => [a0 + a1 + a2 + a3 + a4]  or  [p4]
+
+ ===============================================================
+
+Q.  Given N elements and Q querires For each query calculate sum of all elements
+ from L to R[0 base index]
+
+A[]=[-3, 6, 2, 4, 5, 2, 8, -9, 3, 1]
+
+L   R   Sum
+4   8   9
+3   7   10
+1   3   12
+0   4   14
+7   7   -9
+
+Brute Force Approach:
+
+Q-> Range from left to right
+A-> Actual Array
+Fun querySum(Q[][],A[]){
+for(i=0;i<Q.length;i++){
+L=Q[i][0];
+R=Q[i][1];
+sum=0
+for(j=L;j<R;j++){
+sum+=A[j];
+}
+print(sum)
+}
+}
+
+Time Complexity: O(Q*A)
+
+Constraint given:
+1<=Q<=10^5
+1<=A<=10^5
+In worst case O(Q*A) =10^5*10^5=10^10 it will throw TLE(Time Limit Exceed Error)
+as only 10^8 require
+
+
+Prefix Sum= Prefix sum is cumulative sum in array.
+
+Normal Array: [1,5,8,5,3,2]
+Prefix  sum : [(1)1,(1+5)6,(6+8)14,(14+5)19,(19+3)22,(22+2)24]=[1,5,14,19,22,24]
+
+---------------------------------------
+Brute Force Prefix Sum:
+
+for(i=0;i<A[].length;i++){
+sum=0;
+for(j=0;j<=i;j++){
+sum+=A[i];
+}
+p[i]=sum;
+}
+
+Optimize Approach For Prefix Sum:
+p[0]=A[0];
+for(i=1;i<A[].length;i++){
+p[i]=p[i-1]+A[i];
+}
+
+Q.  Given N elements and Q querires For each query calculate sum of all elements
+ from L to R[0 base index]
+
+public class SumInArrayOfGivenRangeLandRArray {
+	public static int[] preFixSum(int[] arr) {
+		int[] p=new int[arr.length];
+		p[0]=arr[0];
+		for(int i=1;i<arr.length;i++) {
+			p[i]=p[i-1]+arr[i];
+		}
+		return p;
+	}
+	public static void print(int[] p,int L,int R) {
+  if(L==0)
+			System.out.print(p[R]);
+		else
+			System.out.print(p[R]-p[L-1]);
+	}
+	public static void main(String[] args) {
+		int[] arr= {-3,6,2,4,5,2,8,-9,3,1};
+		int[][] Q= {{4,8},{3,7},{1,3},{0,4},{7,7}};
+		int[] p=preFixSum(arr);
+		for(int i=0;i<Q.length;i++) {
+			print(p,Q[i][0],Q[i][1]);
+			System.out.println();
+		}
+	}
+}
+O(N+Q) this will not throw TLE for 1<=N<=10^5 and 1<=Q<=10^5 Constraint
+10^5+10^5=2*10^5
+
+Space Complexity O(n) for prefix Array and Time Complexity O(N+Q)
+
+below code to Optimize space , instead of new array use existing array:
+public static int[] preFixSum2(int[] arr) {
+		for(int i=1;i<arr.length;i++) {
+			arr[i]=arr[i-1]+arr[i];
+		}
+		return arr;
+	}
+------------------------------------------------
+
+Q. Given an array of Size N and Q queries with start S and end e index.
+For every query, return the sum of all even indexed elements from s to e
+
+arr[] = {2,3,1,6,4,5}
+         0 1 2 3 4 5
+Querires
+
+L   R   Sum
+1   3   1
+2   5   5
+0   4   7
+3   3   0
+
+Brute Force implementation:-
+For every query, travel l(i.e. start s) to r(i.e. end e) and add only even index elements
+  TC O(N*Q)
+
+Optimization
+
+Prefix Even Array
+arr[] = {2,3,1,6,4,5}
+Pe[]  = {2,2,3,3,7,7}-> 2(sum 2),2(index odd use prvious value i.e 2),3(sum p[0]2+arr[2]1)
+                        3(index odd use prvious value i.e 3),7(sum p[2]3+arr[4]4),
+                        7(index odd use prvious value i.e 3)
+
+Algo for Prefix Sum Even Array:
+PFe[0]=arr[0]
+if i is Even
+PFe[i]=PFe[i-1]+arr[i]
+else
+PFe[i]=PFe[i-1]
+
+
+
+public class SumEvenNumberIndex {
+	public static int[] prefixSumEvenArray(int[] arr) {
+		int[] PFe=new int[arr.length];
+		PFe[0]=arr[0];
+		for(int i=1;i<arr.length;i++) {
+			if(i%2==0) {
+				PFe[i]=PFe[i-1]+arr[i];
+			}else {
+				PFe[i]=PFe[i-1];
+			}
+		}
+		for(int i=0;i<arr.length;i++) {
+			System.out.print(PFe[i]+" ");
+		}
+		return PFe;
+	}
+	public static void print(int[] PFe,int L, int R) {
+		if(L==0)
+			System.out.println(PFe[R]);
+		else
+			System.out.println(PFe[R]-PFe[L>0?L-1:L]);
+	}
+	public static void main(String[] args) {
+		int[] arr= {2,3,1,6,4,5};
+		int[][] Q= {{1,3},{2,5},{0,4},{3,3}};
+		int[] PFe=prefixSumEvenArray(arr);
+		System.out.println();
+		for(int i=0;i<Q.length;i++) {
+			print(PFe,Q[i][0],Q[i][1]);
+		}
+	}
+}
+
+TC O(N+Q)
+SC O(N)
+
+
+/*
+ * Given an array of Size N. Count the number of special index in array.
+ * Note: Special indices are those after removing which, sum of all EVEN indexed elements is equal to sum of
+ * 		all ODD indexed elements.
+ * arr[]={4,3,2,7,6,-2}
+ *
+ *  Removed Index  		arr				IsSpecialIndex
+ *  	0			{3,2,7,6,-2}			yes(SumEvenIndex(3+7-2=8) SumOddIndex(2+6=8) both are 8 so yes
+ *  	1			{4,2,7,6,-2}			no(SumEvenIndex(4+7-2=9) SumOddIndex(2+6=8) both are 9&8 so no
+ *  	2			{4,3,7,6,-2}			yes
+ *  	3			{4,3,2,6,-2}			no
+ *  	4			{4,3,2,7,-2}			no
+ *  	5			{4,3,2,7,6}				no
+ *
+ */

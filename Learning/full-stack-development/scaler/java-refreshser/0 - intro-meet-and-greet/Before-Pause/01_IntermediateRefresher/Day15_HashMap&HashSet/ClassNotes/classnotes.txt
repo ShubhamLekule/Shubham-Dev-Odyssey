@@ -1,0 +1,94 @@
+HashSet and HashMap
+
+HashSet: collection of unique elements
+
+imagine a bag with unique elements in it.
+1) elements are unique : no duplicate
+2) order is not guaranteed : no order
+3) not sorted
+
+Syntax:
+HashSet<Type> var name=new HashSet<>();
+
+ArrayList                               HashSet
+seq order                             can't relay on order
+Duplicate element allowed             only unique element are stored
+
+------basic operations--------
+HashSet<Integer> hs=new HashSet<Integer>();
+		System.out.println(hs);
+
+		//basic operations
+
+		hs.add(1);
+		hs.add(2);
+		hs.add(1);
+		hs.add(5);
+		hs.add(0);
+		hs.add(8);
+		hs.add(-10);
+		System.out.println(hs);
+
+		//contains
+		System.out.println(hs.contains(8));
+		System.out.println(hs.contains(87));
+		System.out.println(hs.size());
+		System.out.println(hs.remove(5));
+		System.out.println(hs.remove(-5));
+		System.out.println(hs);
+
+		//print
+		for(int i:hs) {
+			System.out.print(i+" ");
+		}
+    -------------------------------------------
+
+-------------------------------------------------------------------------
+HashMap:
+------------------------------------------------------------------------
+
+it contains key value pair
+key has to be unique, values can be duplicate
+no order of data.
+
+//imagin HashSet is a HashMap with values as null, in originally behind the scene HashSet
+//work like this only.
+
+syntax:
+HashMap<KeyType,ValueType> hm=new HashMap<KeyType,ValueType>();
+
+---basic operations--------
+HashMap<String, Integer> hmap=new HashMap<String, Integer>();
+		System.out.println(hmap);
+
+		hmap.put("MH", 100);
+		hmap.put("HN", 20);
+		hmap.put("PN", 18);
+		hmap.put("GOA", 8);
+
+		System.out.println(hmap);
+
+		//contains
+		System.out.println(hmap.containsKey("GOA"));
+		System.out.println(hmap.containsKey("DELHI"));
+
+		//get
+		System.out.println(hmap.get("MH"));
+		System.out.println(hmap.get("DELHI"));
+
+		//update
+		hmap.put("HN", 10);
+		System.out.println(hmap);
+
+		//remove
+		hmap.remove("PN");
+		System.out.println(hmap);
+
+		//print
+		//hm.keySet()  ->  returns a set of keys of HashMap
+		//use keys to iterate over HashMap
+		for(String str:hmap.keySet())
+			System.out.println(str+" "+hmap.get(str));
+
+	}
+  --------------------------

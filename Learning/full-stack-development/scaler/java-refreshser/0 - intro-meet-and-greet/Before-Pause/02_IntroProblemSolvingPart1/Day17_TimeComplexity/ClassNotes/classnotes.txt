@@ -1,0 +1,323 @@
+
+-Log Basics + Iteration Problems
+-Comparing Iteration using graph
+-Time Complexity - definition and Notations (Asymptotic Analysis - Big O)
+-TLE: Time limit exceed
+-Importance of constraint
+
+
+Basics of Log:
+
+log2(64) : log base 2 (64) : this means what will be the power of 2 to get 64 i.e 6
+log3(27) =3
+log5(25) =2
+log2(32) =5
+
+
+log b (a) //what should be power of b to get a.
+
+log b (a) = c : b^c=a
+
+log2(10) = 3.something
+log2(40) = 5.32
+
+2^k=N : log 2 (N) =k
+
+log 2 (2^6)=6
+log 3 (3^5)=5
+log a (a^n)=n
+
+Q. Given a positive integer N, how many times do we need to divide it by 2 (Consider only
+    integer part) until it reaches 1.
+
+    N=100 : 100 -> 50 ->25 ->12 ->6 ->3 ->1 6 times
+    N=324 : 324->162->81->40->20->10->5->2->1 8 times
+
+    log 324 (1) = N
+
+    generically : N ->n/2 ->n/4 ->n/8 ...1  : n/2^0->n/2^1->n/2^2->n/2^4 ...n/2^k
+
+    n/2^k=1  : n=2^k : log 2 (n)=k
+
+    n=27 : log 2 (27) =4. something
+
+  Q. How many iterations will be there in this loop?
+  N>0
+  i=N;
+  while(i>1){
+  i=i/2;
+  }
+  log2(N) iterations it takes
+  N=32 : 32->16->8->4->2->1 =5 times
+  log2(32)=log2(2^5)=5
+
+  Q.  How many iterations will be there in this loop?
+  for(i=1;i<N;i=i*2){
+
+  }
+  log2(N) iterations its takes
+  N=32 : 1->2->4->8->16->32
+
+  Q.  How many iterations will be there in this loop?
+  N>=0
+  for(i=0;i<=N;i=i*2){
+
+  }
+  infinite as i initially 0 , 0 multiply by anything is 0 so i's value never update its
+  always 0.
+
+  Q.  How many iterations will be there in this loop?
+  for(i=1;i<=10;i++){
+    for(j=1;j<=N;j++){
+    .....
+    }
+  }
+  10*N
+  new method to solve above question
+
+  i     j       iterations
+  1    [1,N]      N
+  2    [1,N]      N
+  3    [1,N]      N
+  .
+  .
+  .
+  10    [1,N]     N
+  ------------------
+                  10N // added all iterations
+
+Q.  How many iterations will be there in this loop?
+                  for(i=1;i<=N;i++){
+                    for(j=1;j<=N;j++){
+                    .....
+                    }
+                  }
+    N*N : N^2
+    i     j       iterations
+    1    [1,N]      N
+    2    [1,N]      N
+    3    [1,N]      N
+    .
+    .
+    .
+    N    [1,N]     N
+    ------------------
+                    N*N // added all iterations
+
+    Q.  How many iterations will be there in this loop?
+                                      for(i=1;i<=N;i++){
+                                        for(j=1;j<=N;j=j*2){
+                                        .....
+                                        }
+                                      }
+                                      i     j             iterations
+                                      1    [1,log2(N)]      log2(N)
+                                      2    [1,log2(N)]      log2(N)
+                                      3    [1,log2(N)]      log2(N)
+                                      .
+                                      .
+                                      .
+                                      N    [1,log2(N)]     log2(N)
+                                      ------------------
+                                                      N*log2(N) // added all iterations
+    Q.  How many iterations will be there in this loop?
+    for(i=1;i<=4;i++){
+      for(j=1;j<=i;j++){
+        print i+j
+      }
+    }
+
+    i     j        iterations
+    1     [1,1]    1
+    2     [1,2]    2
+    3     [1,3]    3
+    4     [1,4]    4
+    ------------------------
+                  10// addition of all iterations
+
+  Q.  How many iterations will be there in this loop?
+  for(i=1;i<=N;i++){
+    for(j=1;j<=i;j++){
+      print i+j
+    }
+  }
+
+  i     j        iterations
+  1     [1,1]    1
+  2     [1,2]    2
+  3     [1,3]    3
+  .
+  .
+  .
+  N     [1,N]    N
+  ------------------------
+                N(N+1)/2 // addition of all iterations
+
+Q.  How many iterations will be there in this loop?
+  for(i=1;i<=N;i++){
+    for(j=1;j<=(2^i);j++){
+        ...
+        }
+    }
+
+    i     j        iterations
+    1     [1,2^1]    2^1        : 2
+    2     [1,2^2]    2^2        : 4
+    3     [1,2^3]    2^3        : 6
+    .
+    .
+    .
+    N     [1,2^N]    2^N        : N
+    ------------------------
+                      2(2^n-1)
+2 4 6 ... N GP, r=2 , a=2 , total terms =n
+sum=a(r^n-1)/r-1 =2(2^n-1)/2-1=2(2^n-1)
+
+--------------------------------------------------------------------------------
+
+How to compare two diff algo
+
+the better algo is the algo who takes lesser iterations for huge data.
+
+Asymptotic Analysis: we care this only if input is large
+Asymptotic Analysis is calculating Big O values
+
+Steps to calculate Big O value:
+1) Calculate Iterations based on input size
+2) Ignore Lower order terms
+3) Ignore constant coefficient
+
+
+algo 1: no. of iteration = 100*log(N) -> Ignore lower order term -> Ignore constant ie 100
+        Big O(log(n))
+algo 2: no. of iteration = N/10 -> Ignore lower order term -> Ignore constant ie 10
+                Big O(N)
+
+for example some piece of code takes 4n^2+3n+1 iteration -> ignore lower terms i.e 3n+1
+                                    ->ignore constant coefficient i.e 4 ->Big O(n^2)
+lower order terms:
+log n < root n < n < nlogn < n root n < n^2 < n^3 < 2^n < n! < n^n
+
+e.g n=36
+
+5(log 3 (36)) < root 36 is 6 < 36 < 36*5 < 36^2 < 36^3 < 2^36 < 36! < 36^36
+Assignment : calculate all iteration Problem's Big O value
+
+when iteration are constant then Big O(1), suppose iteration are 10 then BigO(1)
+--------------------------------------------------------------------------------
+IMP: Why do we neglect lower order terms ?
+Input go larger the contribution of lower order term become very small. bcoz of that
+while calculate Big O we ignore them
+
+suppose total iteration N^2+10N
+
+N         total iterations          contribution of lower order terms
+
+10       N^2+10N: 10^2+100=200        10N = 100               50% of total iterations
+100      N^2+10N: 10^4+10^3           10N = 1000              1000/10^4+10^3  approx 9%
+1000     N^2+10N: 10^8+10^5           10N = 10^5              10^5/10^8+10^5  approx 0.1%
+
+by above calculation we can say that when N value is increasing the contribution of
+lower order terms became small.
+--------------------------------------------------------------------------------
+IMP: why to we neglect constant coefficient?
+
+Algo 1          Algo 2    For larger Input
+10log2(N)       N         N=1000    algo1 win as 10log2(1000): 10*9:90
+100log2(N)      N         N=1000    algo1 win as 100log2(1000): 100*9:900
+9*N             N         N=1000    both algo BigO(N) wins both same
+
+multiplying with constant for larger value of N won't make any difference
+------------------------------------------------------------------------------
+1st Issue with BigO
+
+algo1     algo2
+10^3*N    n^2
+as per Bigo calculation algo1 BigO(N) and algo2 is BigO(n^2) so algo1 is better as
+per BigO but suppose N=10
+
+algo1: 10^4 and algo2: 10^2 as per this algo2 is better
+here claim is for all large inputs (>=1000) of N algo1 perform better else algo2 is better
+so for less N value BigO might gives wrong answer. Big O only use for larger value.
+-------------------------------------------------------------------------------
+2nd Issue with BigO
+
+code 1:
+for(int i=1;i<=N;i++){
+.....
+}
+N iteration BigO(N)
+
+code2:
+for(int i=1;i<=N;i=i=2){
+
+}
+N/2 iteration BigO(N)
+
+In both the code BigO(N) but we know 2nd code is better.
+-------------------------------------------------------------------------------
+
+TIME LIMIT EXCEED ERROR(TLE ERROR):
+All companies mutually use same standard machine i.e. 1GHz machine(companies have larger
+machine in online compiler but they allot 1GHz )
+1GHz=10^9 instruction per second
+if code doesn't run within 1sec will get TIME LIMIT EXCEED ERROR.
+
+every single operation done in code is instruction and loop(Repeating code) is iteration.
+
+int countFactor(N){ calling fun instruction9
+int c=0; instruction1
+for(i=1;i<=N;i++){ i=1 instruction2, i<=N instruction3, i++instruction4 'for' instruction10
+  if(N%i==0){ N%i instruction5 N%i==0 instruction6 'if'instruction6
+  c=c+1; c+1 instruction7 c=c+1 instruction8
+  }
+}
+return c; instruction9
+}
+
+total instruction 10
+
+approximation1: in a small code generally in 1 iteration there are 10 instructions
+if 10 instructions then we can have 10*10^8 iteration =10^9 instruction
+
+approximation1: if we write big code 1 iteration having 100 instruction. that means
+we allow 10^7 iteration for big code
+1 iteration = 100 instruction
+10^7 iteration =100*10^7 instruction i.e 10^9 instruction
+
+conclusion: our code can have 10^7 or 10^8 iteration then only it will run in 1sec.
+if this iteration exceed will get a TLE error.
+
+-----------------------------------------------------------------------------
+
+How to approach a problem:
+1) Read the questions and constraints carefully.
+2) Formulate an idea or logic.
+3) Verify the correctness of the logic.
+4) Mentally develop a pseudocode or rough idea of loops.
+5) Determine the Time Complexity based on the pseudocode.
+6) Asses if the time Complexity id feasible and won't result in TLE errors.
+7) Re-evaluate the Idea/Logic if the time constraints are not met; otherwise proceed.
+8) Code the idea if it us deemed feasible.
+
+e.g1)if constraint 1<=N<=10^5 then should be BigO(N), if BigO(N^2)  10^5^2=10^10 it throw TLE
+as only 10^9 only allowed.
+
+e.g2) 1<=N<=10^6
+O(N^2log(N)) not work
+O(N^2) not work
+O(NlogN) 10^6log(10^6)=10^6*approx 20 => may or may not work
+O(N) 100% work
+
+e.g3) 1<=N<=100
+O(n^3) work
+
+e.g4) 1<=N<=20
+O(2^N) : 2^20 work
+
+conclusion: Smaller the constraint is higher the instruction we can use and vice versa
+
+-------------------------------------------------
+
+Next Lecture:
+Arrays

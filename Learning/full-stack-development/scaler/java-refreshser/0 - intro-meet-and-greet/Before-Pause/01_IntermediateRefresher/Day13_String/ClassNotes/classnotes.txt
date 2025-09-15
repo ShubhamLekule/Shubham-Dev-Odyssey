@@ -1,0 +1,89 @@
+String:
+"Hello world"
+
+String is sequence of character
+
+ASCII
+A-Z 65-90
+
+a-z 97-123
+
+0-9 48 57
+
+int 10:=>  1010
+
+String 10:=> 48 49 :=> 00110001 00110000
+
+
+if(str.charAt(i)>=65 && str.charAt(i)<=90) when comparision happens no need to convert it
+into int . it will implicitly convert it into int
+
+
+str='A'
+
+if(str.charAt(0)>='B')print 1  //op:1
+behind the scene compiler convert both str.charAt(0)( i.e 'A') & 'B' into ASCII equivalent values
+and then compare it
+
+
+Two types of datatypes in java
+1)Primitive datatypes: int, boolean, float, double etc.
+2)Class type datatypes: String AarayList Integer etc.
+
+String str1=new String("Shubham");
+String str2=new String("Shubham");
+
+memory
+-----------------------------------
+|       str1=memoryAddr:30k       |
+|           |Shubham|             |
+|                                 |
+-----------------------------------
+
+memory
+-----------------------------------
+|       str2=memoryAddr:40k       |
+|           |Shubham|             |
+|                                 |
+-----------------------------------
+
+str1==str2(behind the scene its 30k==40k) //op false
+
+str1.equals(str2)
+        (behind the scene its values at 30k(i.e Shubham).equals(values at 40k(i.e Shubham)))
+
+primitive datatypes are stored in stack memory and Objects are stored in heap memory
+but the refrence variable which holds object are stored in stack.
+
+int i=10;
+String str="Shubham";
+
+-------------------------------
+|stack memory:                |
+|                             |
+|   i=10                      |
+|   str=30k memoryAddr        |
+|                             |
+-------------------------------
+|heap memory:                 |
+|                             |
+|     30k memoryAddr          |
+|     |Shubham|               |
+-------------------------------
+
+
+ArrayList<Integer> arr=new ArrayList<Integer>(Arrays.asList{1,2,1});
+arr.get(0)==arr.get(2) // op is false
+reason the type of ArrayList is Integer not int which in classType datatype,
+so the arr.get(0) holds address of value 1 not actual value 1
+
+String str1="Shubham"
+String str2="Shubham"
+
+str1==str2 //op true.
+internally string does optimization , when str1 define "Shubham" string in heap memory
+"Shubham" string created and its memoryAddr(Suppose 30k) stored in str1 when again
+str2="Shubham" define it will check if Shubham String already in heap memory or not
+if yes it will use same memoryAddr(i.e 30K) to str2.
+so str1 == str2(30k == 30k) its true.x
+if we use new keyword while creating String then only new address created for same string

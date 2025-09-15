@@ -1,0 +1,23 @@
+Functions:
+Problems withot Functions:
+1)Redundancy of code
+2)Readability: loosing context
+3)Maintainability: same type of work we do again and again hard to maintain or track
+4)line of code increases
+
+
+Input ----> Function -----> output
+
+
+syntax:
+FunctionDefinition:
+returnDatatype functionname(datatype variable ...){
+write logic
+
+return result
+}
+
+FunctionCall:
+returnDatatype var=functionname(values1,2,3...);
+
+can't use int x=09 bcoz starting number with 0 consider as octal

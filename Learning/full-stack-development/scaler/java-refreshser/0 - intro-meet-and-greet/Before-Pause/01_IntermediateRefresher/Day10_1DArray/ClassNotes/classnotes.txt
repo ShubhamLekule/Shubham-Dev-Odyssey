@@ -1,0 +1,9 @@
+1D Array:
+Array: sequential collection of similar data
+
+int[] arrayName=new int[sizeOfArray];
+datatype variablename= new datatype[sizeOfArray];
+
+index start from 0
+
+we cannot change size of array we can create new one with similar name
